@@ -143,6 +143,9 @@ require('lazy').setup({
   -- NOTE: Plugins can be added with a link (or for a github repo: 'owner/repo' link).
   'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
 
+  -- Keep the same keybindings to switch between vim panes and tmux panes
+  'christoomey/vim-tmux-navigator',
+
   -- NOTE: Plugins can also be added by using a table,
   -- with the first argument being the link and the following
   -- keys can be used to configure plugin behavior/loading/etc.
@@ -265,6 +268,21 @@ require('lazy').setup({
       -- [[ Configure Telescope ]]
       -- See `:help telescope` and `:help telescope.setup()`
       require('telescope').setup {
+        -- Configure telescope to find hidden files as well.
+        defaults = {
+          vimgrep_arguments = {
+            'rg',
+            '--glob',
+            '--files',
+            '--no-ignore-vcs',
+            '--hidden',
+          },
+        },
+        pickers = {
+          find_files = {
+            hidden = true,
+          },
+        },
         -- You can put your default mappings / updates / etc. in here
         --  All the info you're looking for is in `:help telescope.setup()`
         --
@@ -273,7 +291,7 @@ require('lazy').setup({
         --     i = { ['<c-enter>'] = 'to_fuzzy_refine' },
         --   },
         -- },
-        -- pickers = {}
+
         extensions = {
           ['ui-select'] = {
             require('telescope.themes').get_dropdown(),
