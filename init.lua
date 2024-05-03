@@ -272,9 +272,12 @@ require('lazy').setup({
         defaults = {
           vimgrep_arguments = {
             'rg',
-            '--glob',
-            '--files',
-            '--no-ignore-vcs',
+            '--color=never',
+            '--smart-case',
+            '--no-heading',
+            '--with-filename',
+            '--line-number',
+            '--column',
             '--hidden',
           },
         },
