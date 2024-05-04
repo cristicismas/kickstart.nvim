@@ -12,6 +12,10 @@ vim.g.have_nerd_font = true
 -- NOTE: You can change these options as you wish!
 --  For more options, you can see `:help option-list`
 
+-- Set tab width to 4 spaces
+vim.opt.tabstop = 4
+vim.opt.shiftwidth = 4
+
 -- Make line numbers default
 vim.opt.number = true
 -- You can also add relative line numbers, to help with jumping.
@@ -145,6 +149,9 @@ require('lazy').setup({
 
   -- Keep the same keybindings to switch between vim panes and tmux panes
   'christoomey/vim-tmux-navigator',
+
+  -- Icons for nvim-tree
+  'nvim-tree/nvim-web-devicons',
 
   -- NOTE: Plugins can also be added by using a table,
   -- with the first argument being the link and the following
