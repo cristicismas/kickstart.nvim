@@ -287,6 +287,9 @@ require('lazy').setup({
             '--column',
             '--hidden',
           },
+          file_ignore_patterns = {
+            'addons/',
+          },
         },
         pickers = {
           find_files = {
