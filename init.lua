@@ -15,6 +15,7 @@ vim.g.have_nerd_font = true
 -- Set tab width to 4 spaces
 vim.opt.tabstop = 4
 vim.opt.shiftwidth = 4
+vim.opt.smarttab = true
 
 -- Make line numbers default
 vim.opt.number = true
@@ -152,6 +153,18 @@ require('lazy').setup({
 
   -- Icons for nvim-tree
   'nvim-tree/nvim-web-devicons',
+
+  -- git diff viewer
+  {
+    'sindrets/diffview.nvim',
+    config = function()
+      vim.keymap.set('n', '<leader>sc', ':DiffviewOpen<Enter>', { desc = '[S]ource [C]ontrol Diff Viewer' })
+      vim.keymap.set('n', '<leader>qs', ':DiffviewClose<Enter>', { desc = '[Q]uit [S]ource Control Diff Viewer' })
+    end,
+  },
+
+  -- git fugitive
+  { 'tpope/vim-fugitive' },
 
   -- NOTE: Plugins can also be added by using a table,
   -- with the first argument being the link and the following
