@@ -24,7 +24,11 @@ return {
           '.git',
           '.DS_Store',
         },
-        never_show = {},
+        hide_by_pattern = {},
+        never_show = {
+          '.git',
+          'node_modules',
+        },
       },
       window = {
         mappings = {
