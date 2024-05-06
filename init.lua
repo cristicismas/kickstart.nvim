@@ -299,9 +299,13 @@ require('lazy').setup({
             '--line-number',
             '--column',
             '--hidden',
+            '-g',
+            '!package-lock.json',
           },
           file_ignore_patterns = {
             'addons/',
+            '.git/*',
+            'package-lock.json',
           },
         },
         pickers = {
