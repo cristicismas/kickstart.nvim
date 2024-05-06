@@ -306,7 +306,20 @@ require('lazy').setup({
         },
         pickers = {
           find_files = {
-            hidden = true,
+            find_command = {
+              'rg',
+              '--no-ignore',
+              '--hidden',
+              '--files',
+              '-g',
+              '!**/addons/*',
+              '-g',
+              '!**/node_modules/*',
+              '-g',
+              '!**/.git/*',
+              '-g',
+              '!**/.next/*',
+            },
           },
         },
         -- You can put your default mappings / updates / etc. in here
